@@ -10,7 +10,7 @@ const char* assemblyPath = "C:/git/minimono/Sleeper/bin/Debug/Sleeper.exe";
 int main(int argc, char* argv[])
 {
 	init_mono(monoDllPath, monoAssemblyDir, monoConfigDir);
-	exec_mono(assemblyPath, argc, argv);
+	exec_mono(assemblyPath);
 
 	return 0;
 }

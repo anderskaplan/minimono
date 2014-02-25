@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using System.Reflection;
 
 namespace Sleeper
 {
@@ -9,7 +10,7 @@ namespace Sleeper
         {
             Console.WriteLine(Thread.CurrentThread.GetApartmentState());
 
-            foreach (var assy in AppDomain.CurrentDomain.GetAssemblies())
+            foreach (Assembly assy in AppDomain.CurrentDomain.GetAssemblies())
             {
                 Console.WriteLine(assy.FullName + "\t" + assy.Location);
             }
