@@ -19,9 +19,16 @@ namespace Sleeper
             //    Console.WriteLine(assy.FullName + "\t" + assy.Location);
             //}
 
+            Console.WriteLine("Main thread ID: " + Thread.CurrentThread.ManagedThreadId);
+
             RegisterThreadTestCallback(Marshal.GetFunctionPointerForDelegate(_callback));
-            InvokeThreadTestCallback();
-            InvokeThreadTestCallbackThreaded();
+            //InvokeThreadTestCallback();
+            //InvokeThreadTestCallbackThreaded();
+
+            Thread thread = new Thread(ThreadProc);
+            Console.WriteLine("Worker thread ID (not started): " + thread.ManagedThreadId);
+            thread.IsBackground = true;
+            thread.Start();
 
             Console.WriteLine("starting");
 
@@ -32,6 +39,12 @@ namespace Sleeper
             }
 
             Console.WriteLine("exiting");
+        }
+
+        private static void ThreadProc(object obj)
+        {
+            Console.WriteLine("Worker thread ID: " + Thread.CurrentThread.ManagedThreadId);
+            InvokeThreadTestCallbackFromManagedThread();
         }
 
         private static void MyCallbackFunction()
@@ -47,6 +60,9 @@ namespace Sleeper
 
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
         private static extern void InvokeThreadTestCallbackThreaded();
+
+        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        private static extern void InvokeThreadTestCallbackFromManagedThread();
     }
 
     public delegate void CallbackHandler();

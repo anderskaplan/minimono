@@ -161,9 +161,16 @@ static void invoke_thread_test_callback_threaded()
 	CloseHandle(hthread);
 }
 
+static void invoke_thread_test_callback_from_managed_thread()
+{
+	Sleep(5000);
+	invoke_thread_test_callback();
+}
+
 void install_thread_test_function()
 {
 	mono_add_internal_call_func("Sleeper.Program::RegisterThreadTestCallback", register_thread_test_callback);
 	mono_add_internal_call_func("Sleeper.Program::InvokeThreadTestCallback", invoke_thread_test_callback);
 	mono_add_internal_call_func("Sleeper.Program::InvokeThreadTestCallbackThreaded", invoke_thread_test_callback_threaded);
+	mono_add_internal_call_func("Sleeper.Program::InvokeThreadTestCallbackFromManagedThread", invoke_thread_test_callback_from_managed_thread);
 }
