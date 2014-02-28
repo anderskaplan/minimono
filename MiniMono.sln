@@ -2,8 +2,14 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MiniMono", "MiniMono.vcxproj", "{E55E1557-5093-4A8A-873C-1A8BB7FEF65B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F055FA3D-6301-4188-9749-9AED735811D3} = {F055FA3D-6301-4188-9749-9AED735811D3}
+		{8898ACFC-653D-4DEA-8020-14A71DF405DD} = {8898ACFC-653D-4DEA-8020-14A71DF405DD}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sleeper", "Sleeper\Sleeper.csproj", "{8898ACFC-653D-4DEA-8020-14A71DF405DD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CuckoosEgg", "CuckoosEgg\CuckoosEgg.vcxproj", "{F055FA3D-6301-4188-9749-9AED735811D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +41,16 @@ Global
 		{8898ACFC-653D-4DEA-8020-14A71DF405DD}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{8898ACFC-653D-4DEA-8020-14A71DF405DD}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{8898ACFC-653D-4DEA-8020-14A71DF405DD}.Release|Win32.ActiveCfg = Release|Any CPU
+		{F055FA3D-6301-4188-9749-9AED735811D3}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{F055FA3D-6301-4188-9749-9AED735811D3}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{F055FA3D-6301-4188-9749-9AED735811D3}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{F055FA3D-6301-4188-9749-9AED735811D3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F055FA3D-6301-4188-9749-9AED735811D3}.Debug|Win32.Build.0 = Debug|Win32
+		{F055FA3D-6301-4188-9749-9AED735811D3}.Release|Any CPU.ActiveCfg = Release|Win32
+		{F055FA3D-6301-4188-9749-9AED735811D3}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{F055FA3D-6301-4188-9749-9AED735811D3}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{F055FA3D-6301-4188-9749-9AED735811D3}.Release|Win32.ActiveCfg = Release|Win32
+		{F055FA3D-6301-4188-9749-9AED735811D3}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
